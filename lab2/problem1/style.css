@@ -1,0 +1,58 @@
+h1{
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#add_contact
+{
+	margin-left: 100px;
+	margin-right: 100px;
+	display: flex;
+	background-color: aquamarine;
+	align-items: center;
+	justify-content: center;
+	border-width: 10px;
+}
+
+
+#form
+{
+	
+	margin-top:50px;
+	margin-bottom: 50px;
+}
+#containers
+{
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+
+#contact_list
+{
+	border:1px solid black;
+	border-collapse:collapse;
+}
+
+tr,td,th
+{
+	border:1px solid black;
+}
+
+#contact_table
+{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+#contact_table_child
+{
+	margin-top:50px;
+}
+
+
