@@ -1,0 +1,66 @@
+#username
+{
+	font-size:20px;
+	margin-left:100px;
+}
+
+#search
+{
+	font-size:20px;
+	border-radius:10px;
+}
+
+#profile
+{
+	font-size:17px;
+}
+
+#user_repo_label
+{
+	font-size:17px;
+}
+
+#user_table
+{
+	border:1px solid black;
+	border-collapse:collapse;
+}
+
+tr,td,th
+{
+	border:1px solid black;
+}
+
+#container
+{
+	display:flex;
+}
+
+#user_repo_table
+{
+	border:1px solid black;
+	border-collapse:collapse;
+}
+
+#profile_table
+{
+	flex: 1;
+	margin-left:100px;
+}
+
+#repo_table
+{
+	flex: 1;
+	margin-right:800px;
+}
+
+
+#u_avatar, #u_first_name, #u_name, #u_email, #u_location, #u_gits
+{
+	color:red;
+}
+
+#avatar, #first_name, #uname, #email, #location, #no_of_gists
+{
+	color:black;
+}

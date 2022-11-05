@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web application for querying user information from the Github API</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div>
+		<input type="text" id="username" name="username" placeholder="Username">
+		<button type="button" id="search" onclick="get_user_data_from_github()">Search</button>
+		
+		<br><br><br>
+		
+		<div id="container">
+		
+			<div id="profile_table">
+			
+				<label id="profile"><b>User Profile</b></label>
+				
+				<table id="user_table">
+					<thead>
+						<tr>
+							<th id="u_avatar">Avatar: <p id="avatar"></p></th>
+						</tr>
+						<tr>
+							<th id="u_first_name">Name: <p id="first_name"></p></th>
+						</tr>
+						<tr>
+							<th id="u_name">Username: <p id="uname"></p></th>
+						</tr>
+						<tr>
+							<th id="u_email">Email: <p id="email"></p></th>
+						</tr>
+						<tr>
+							<th id="u_location">Location: <p id="location"></p></th>
+						</tr>
+						<tr>
+							<th id="u_gists">Number of Gists: <p id="no_of_gists"></p></th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			
+			<div id="repo_table">
+			
+				<label id="user_repo_label"><b>User Repos</b></label>
+				
+				<table id="user_repo_table">
+				
+					<thead>
+						
+					</thead>
+				</table>
+			</div>
+		</div>
+
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
