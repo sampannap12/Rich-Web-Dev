@@ -9,7 +9,7 @@ h1{
 	margin-left: 100px;
 	margin-right: 100px;
 	display: flex;
-	background-color: aquamarine;
+	background-color: rgb(207, 227, 220);
 	align-items: center;
 	justify-content: center;
 	border-width: 10px;
