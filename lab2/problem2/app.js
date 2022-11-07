@@ -21,12 +21,18 @@ const getPosts = async() =>{
 getPosts()
 .then (data => data.map((posts)=> {
     postsBody=(posts.body)
-    return (postsBody)
+   
+    var allData = JSON.stringify(postsBody)
+    allData = allData.replace("\"", '') //removing the start quotation mark
+    allData = allData.replace("\"", '') //removing the ending quotation mark
+    allData = allData.replace(/\\n/g, ' ') // removing the "new Line  charater" with a white space  
+    return (allData)
+    
 }))
     .then(wordCount =>{
         wordOcc=[]
         words = wordCount
-        .map (wordCount =>wordCount.split(' ')
+        .map (wordCount => wordCount.split(" ") 
         .map(wordCount=>{
             if(wordCount in wordOcc)
             {wordOcc[wordCount]++}
