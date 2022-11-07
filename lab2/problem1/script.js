@@ -1,104 +1,71 @@
-function get_user_data_from_github()
+function add_contact()
 {	
-	var username_info = document.getElementById("username").value;
+	var name = document.getElementById('name').value;
+	var mobile = document.getElementById('mobile').value;
+	var email = document.getElementById('email').value;
 	
-	user_profile_api().then(
-	  function(value) {display_user_info(value);},
-	  function(error) {display_user_info(error);}
-	);
-	
-	display_repo_api().then(
-	  function(value) {display_repo_information(value);},
-	  function(error) {display_repo_information(error);}
-	);
-	
-	async function user_profile_api() 
+	if (mobile.length != 10) 
 	{
-		try
-		{	
-			const api_response = await fetch("https://api.github.com/users/" + username_info);
-			let all_github_info = await api_response.json();
-			
-			var user_github_info_array = new Array(all_github_info.avatar_url, all_github_info.name, all_github_info.login, all_github_info.email, all_github_info.location, all_github_info.public_gists);
-		
-			return user_github_info_array;
-		}
-		
-		catch (e) 
+		alert("Mobile number needs to be 10 digits long");
+		return false;
+	}
+	
+	if (/^[A-Za-z\s]*$/.test(name) == false)
+	{
+		alert("Name isn't valid. The name can only contain alphabets and spaces");
+		return false;
+	}
+	
+	var contact_list_table = document.getElementById('contact_list').getElementsByTagName('tbody')[0];
+	
+	var row = contact_list_table.insertRow();
+	
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+	var cell3 = row.insertCell(2);
+	
+	cell1.innerHTML = name;
+	cell2.innerHTML = mobile;
+	cell3.innerHTML = email;
+	
+	for (var i = 0, row; row = contact_list.rows[i]; i++) 
+	{
+		if (i % 2 != 0)
 		{
-			console.log(e);
+			var x = document.getElementById("contact_list").getElementsByTagName("tr");
+			x[i].style.backgroundColor = '#f2f2f2';
 		}
 	}
 	
+	document.getElementById('name').value = '';
+	document.getElementById('mobile').value = '';
+	document.getElementById('email').value = '';
+}
+
+function mobile_phone_search() 
+{
+	var input = document.getElementById("mobile_search");
 	
-	async function display_repo_api() 
+	var table = document.getElementById("contact_list");
+	
+	var tr = table.getElementsByTagName("tr");
+	
+	var td,cell,i;
+	
+	for (i = 1; i < tr.length; i++) 
 	{
-		try
-		{	
-			const repo_api = await fetch("https://api.github.com/users/" + username_info + "/repos");
-			let user_repo_info = await repo_api.json();
-			
-			var repo_information_array = new Array();
-			
-			for(i = 0; i < user_repo_info.length; i++)
+		tr[i].style.display = "none";
+  
+		td = tr[i].getElementsByTagName("td");
+
+		cell = tr[i].getElementsByTagName("td")[1];
+		
+		if (cell) 
+		{
+			if (cell.innerHTML.indexOf(input.value) > -1) 
 			{
-				repo_information_array.push(user_repo_info[i].name);
-				repo_information_array.push(user_repo_info[i].description);
-			}
-			
-			return repo_information_array;
-
+				tr[i].style.display = "";
+			} 
 		}
-		
-		catch (e) 
-		{
-			console.log(e);
-		}
-	}
-	
-}
-
-get_user_data_from_github();
-
-function display_user_info(github_info_from_users_array) {
-	document.getElementById("avatar").innerHTML = '<img src="' + github_info_from_users_array[0] + '" height=200px />' + "";
-	document.getElementById("first_name").innerHTML = github_info_from_users_array[1] + "";
-	document.getElementById("uname").innerHTML = github_info_from_users_array[2] + "";
-	document.getElementById("email").innerHTML = github_info_from_users_array[3] + "";
-	document.getElementById("location").innerHTML = github_info_from_users_array[4] + "";
-	document.getElementById("no_of_gists").innerHTML = github_info_from_users_array[5] + "";
-}
-
-
-function display_repo_information(repo_info_from_users_array) {
-	
-	var j = 0;
-	
-	var repo_html_table = document.getElementById('user_repo_table').getElementsByTagName('thead')[0];
-	
-	repo_html_table.innerHTML = "";
-
-	var new_row_added = repo_html_table.insertRow(repo_html_table.rows.length);
-	
-	for(i = 0; i < repo_info_from_users_array.length; i++)
-	{
-		if (typeof repo_info_from_users_array[j] == "undefined")
-		{
-			break;
-		}
-		
-		else
-		{
-			new_row_added = repo_html_table.insertRow(repo_html_table.rows.length);
-			new_row_added.innerHTML = "Name: " + repo_info_from_users_array[j];
-			
-			j++;
-			
-			new_row_added = repo_html_table.insertRow(repo_html_table.rows.length);
-			new_row_added.innerHTML = "Description: " + repo_info_from_users_array[j];
-			
-			j++;
-		}
-		
 	}
 }
