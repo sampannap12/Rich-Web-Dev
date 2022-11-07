@@ -38,6 +38,11 @@ tr,td,th
 
 #user_repo_table
 {
+	
+	overflow-y:scroll;
+	height:100px;
+	display:block;
+	
 	border:1px solid black;
 	border-collapse:collapse;
 }
@@ -45,7 +50,7 @@ tr,td,th
 #profile_table
 {
 	flex: 1;
-	margin-left:100px;
+	margin-left:20px;
 }
 
 #repo_table
@@ -55,10 +60,7 @@ tr,td,th
 }
 
 
-#u_avatar, #u_first_name, #u_name, #u_email, #u_location, #u_gits
-{
-	color:red;
-}
+
 
 #avatar, #first_name, #uname, #email, #location, #no_of_gists
 {
