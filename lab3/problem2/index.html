@@ -1,0 +1,30 @@
+<html> 
+    <head>
+    <style>
+        
+          .tr {
+            display: table-row;
+          }
+          .tr > div {
+            display: table-cell;
+          }
+          .timerInput {
+            display: table-cell;
+            vertical-align: middle;
+          }
+    </style>
+    <body>
+<h1>Countdown Timer</h1>
+<div class="timerInput">
+<form id="timerForm">
+
+    
+    <input type="number"  placeholder="h" value="">
+    :
+    <input type="number" autocomplete="off" spellcheck="false" min="0" size="1" placeholder="m" value="">
+    :
+    <input type="number"  placeholder="s" class="s" value="">
+    <button form="timerForm" id="timerButton"  type="submit"></button>Start Countdown</form>
+</div>
+</body>
+    </html>
