@@ -22,6 +22,24 @@ function addNote() {
       messages.contentEditable="true";
       li.className = document.getElementById('color').value;
       
+      redBtn.className = 'red';
+      redBtn.innerHTML = 'R';
+      rxjs.fromEvent(redBtn, 'click')
+		  .subscribe(() => redColor(li)
+	    );
+
+      greenBtn.className = 'green';
+      greenBtn.innerHTML = 'G';
+      rxjs.fromEvent(greenBtn, 'click')
+		  .subscribe(() => greenColor(li)
+	    );
+
+      blueBtn.className = 'blue';
+      blueBtn.innerHTML = 'B';
+      rxjs.fromEvent(blueBtn, 'click')
+		  .subscribe(() => blueColor(li)
+	    );
+
       li.appendChild(deleteBtn);
       li.appendChild(redBtn);
       li.appendChild(blueBtn);
@@ -39,7 +57,19 @@ function addNote() {
 	    );
       
     }
-   
+    
+    function redColor(li) {
+      li.className = 'red';
+      
+    }
+
+    function blueColor(li) {
+      li.className = 'blue';
+    }
+
+    function greenColor(li) {
+      li.className = 'green';
+    }
     
     //delete function
      function deleteNote(li) {

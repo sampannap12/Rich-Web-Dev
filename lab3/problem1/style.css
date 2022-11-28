@@ -43,16 +43,7 @@ body {
     margin-bottom: 15px;
     padding: 8px 6px;
   }
-  
-  
-  
-  #button {
-    position: relative;
-  }
-  
-  
-  
-  
+
   
   button {
     position: relative;
@@ -107,7 +98,25 @@ body {
   #notes li.blue {
     background: rgb(7, 156, 249);
   }
-
+  
+  .red {
+    background: rgb(247, 15, 11);
+    width: 15%;
+    
+  }
+  .blue {
+    background: rgb(7, 156, 249);
+    width: 15%;
+  }
+  .green {
+    background: rgb(4, 253, 4);
+    width: 15%;
+    
+  }
+  .red , .blue, .green {
+    display:inline-block;
+    /* additional code */
+    }
   
   
   .delete {
