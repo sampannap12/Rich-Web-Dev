@@ -1,30 +1,17 @@
 <html> 
-    <head>
-    <style>
-        
-          .tr {
-            display: table-row;
-          }
-          .tr > div {
-            display: table-cell;
-          }
-          .timerInput {
-            display: table-cell;
-            vertical-align: middle;
-          }
-    </style>
-    <body>
+  <head>
+    <script src="https://unpkg.com/rxjs@7.5.7/dist/bundles/rxjs.umd.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+<body>
 <h1>Countdown Timer</h1>
 <div class="timerInput">
-<form id="timerForm">
-
-    
-    <input type="number"  placeholder="h" value="">
+    <input type="number" id= "hours"  placeholder="h" value="">
     :
-    <input type="number" autocomplete="off" spellcheck="false" min="0" size="1" placeholder="m" value="">
+    <input type="number" id = "minutes" autocomplete="off" spellcheck="false" min="0" size="1" placeholder="m" value="">
     :
-    <input type="number"  placeholder="s" class="s" value="">
-    <button form="timerForm" id="timerButton"  type="submit"></button>Start Countdown</form>
+    <input type="number" id = "input" placeholder="s" class="s" value="">
+    <button  id="timerButton"  type="submit"></button>Start Countdown</form>
 </div>
 </body>
-    </html>
+</html>
