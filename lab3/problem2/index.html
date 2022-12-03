@@ -1,17 +1,21 @@
 <html> 
   <head>
-    <script src="https://unpkg.com/rxjs@7.5.7/dist/bundles/rxjs.umd.min.js"></script>
-    <script src="script.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.1.0/rxjs.umd.js"></script>
+    
   </head>
 <body>
 <h1>Countdown Timer</h1>
 <div class="timerInput">
-    <input type="number" id= "hours"  placeholder="h" value="">
+    <input type="number" id= "hours"  placeholder="h" >
     :
-    <input type="number" id = "minutes" autocomplete="off" spellcheck="false" min="0" size="1" placeholder="m" value="">
+    <input type="number" id = "minutes"  placeholder="m" >
     :
-    <input type="number" id = "input" placeholder="s" class="s" value="">
-    <button  id="timerButton"  type="submit"></button>Start Countdown</form>
+    <input type="number" id = "seconds" placeholder="s">
+    <button  id="timerButton" >Start Countdown</button>
 </div>
+<div id = "display"></div>
+<script src="script.js"></script>
+
 </body>
 </html>
