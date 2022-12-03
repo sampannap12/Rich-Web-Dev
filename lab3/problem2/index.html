@@ -2,19 +2,34 @@
   <head>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.1.0/rxjs.umd.js"></script>
-    
+    <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
 <body>
+<div class="mainContainer">
 <h1>Countdown Timer</h1>
-<div class="timerInput">
-    <input type="number" id= "hours"  placeholder="h" >
-    :
-    <input type="number" id = "minutes"  placeholder="m" >
-    :
-    <input type="number" id = "seconds" placeholder="s">
-    <button  id="timerButton" >Start Countdown</button>
+<div class="usertimerInput">
+    <div class="digitInput">
+      <input type="number" id= "hours"  placeholder="h" >
+    </div>
+    <div class="timeSeparator">
+      <input class="colonDisplay" value=":" disabled>
+    </div>
+    <div class = "digitInput">
+      <input type="number" id = "minutes"  placeholder="m"  >
+    </div>
+    <div class="timeSeparator">
+      <input class="colonDisplay" value=":" disabled>
+    </div>
+    <div class = "digitInput">
+      <input type="number" id = "seconds" placeholder="s" >
+    </div>
 </div>
+  <div id="StartCountdown">
+    <button  id="timerButton" >Start Countdown</button>
+  </div>
+
 <div id = "display"></div>
+</div>
 <script src="script.js"></script>
 
 </body>
