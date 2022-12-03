@@ -3,8 +3,10 @@ const {fromEvent } = rxjs;
 const { Observable, Subscriber } = rxjs; 
 const { map,take} = rxjs.operators;
 
+
 var startbtn = document.getElementById("timerButton");
-rxjs.fromEvent(startbtn, "click").subscribe(() => time());
+rxjs.fromEvent(startbtn, 'click').subscribe(() => time());
+
 
 
 
@@ -18,9 +20,19 @@ interval(1000).pipe(take(durationInSeconds), map(count => durationInSeconds - co
   const secs = (Math.floor(countdown % (60))) .toString()
 
   document.getElementById("display").innerHTML = `${hrs.padStart(2, '0')}:${mins.padStart(2, '0')}:${secs.padStart(2, '0')}`;
-  
-  
+  console.log(countdown)
+ 
+  if (countdown == 1 )
+  {
+    var delayInMilliseconds = 1000; //1 second
 
+setTimeout(function() {
+  document.getElementById("display").innerHTML = `${'00'}`;
+}, delayInMilliseconds);
+    
+  }
+  
+ 
 })
 }
 // Display the result
@@ -29,6 +41,7 @@ interval(1000).pipe(take(durationInSeconds), map(count => durationInSeconds - co
 
 
 function time() {
+    
     var h = document.getElementById("hours").value;
     var m = document.getElementById("minutes").value;
     var s = document.getElementById("seconds").value;
