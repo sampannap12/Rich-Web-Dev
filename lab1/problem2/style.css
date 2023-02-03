@@ -25,11 +25,7 @@ body {
 }
 
 
-label {
-  display: block;
-  width: 100%;
-  margin-bottom: 15px;
-}
+
 
 input {
   font-size: 16px;
@@ -49,25 +45,17 @@ textarea {
 }
 
 
-
-#button {
-  position: relative;
-}
-
-
-
-
-
 button {
   position: relative;
   display: block;
   width: 100px;
-  margin-top: 40px;
+  margin-top: 4px;
   padding: 12px 8px;
   border-radius: 5px;
   margin-bottom: 15px;
   outline: none;
   border:0;
+  cursor :pointer;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
   background: rgb(7, 164, 62);
   color: white;
@@ -111,26 +99,37 @@ ul {
   background: rgb(7, 156, 249);
 }
 
-.edit {
-  position: relative;
-  cursor: pointer;
-  box-shadow: inset;
-  border: 2px;
-  background-color: aliceblue;
-  
+.red {
+  background: rgb(247, 15, 11);
+  width: 15%;
   
 }
+.blue {
+  background: rgb(7, 156, 249);
+  width: 15%;
+}
+.green {
+  background: rgb(4, 253, 4);
+  width: 15%;
+  
+}
+.red , .blue, .green {
+  display:inline-block;
+  /* additional code */
+  }
 
 
 .delete {
   float: right;
   position: absolute;
-  top: 5px;
+  
   right: 5px;
   cursor: pointer;
   border: 2px;;
-  background-color: aliceblue;
+  
 }
+
+
 
 
 

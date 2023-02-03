@@ -13,6 +13,7 @@
     notesSection: document.getElementById('notes-section'),
     notes: document.getElementById('notes'),
     
+    
 
     init: function() {
       app.addButton.addEventListener('click', app.createNote);
@@ -38,22 +39,40 @@
       message = document.createElement('span');
       title.className = 'note-title';
       title.innerHTML = note.title;
+      title.contentEditable="true";
       message.className = 'note-message';
       message.innerHTML = note.message;
+      message.contentEditable="true";
       li.className = note.color;
+     
+      redBtn = document.createElement('button'),
+      greenBtn = document.createElement('button'),
+      blueBtn = document.createElement('button'),
+
+      
+      redBtn.className = 'red';
+      redBtn.innerHTML = 'R';
+      redBtn.addEventListener('click', app.redNote);
+
+      greenBtn.className = 'green';
+      greenBtn.innerHTML = 'G';
+      greenBtn.addEventListener('click', app.greenNote);
+
+      blueBtn.className = 'blue';
+      blueBtn.innerHTML = 'B';
+      blueBtn.addEventListener('click', app.blueNote);
       
       li.appendChild(deleteBtn);
       li.appendChild(title);
       li.appendChild(message);
-      li.appendChild(editBtn);
+      li.appendChild(redBtn);
+      li.appendChild(blueBtn);
+      li.appendChild(greenBtn);
 
       deleteBtn.className = 'delete';
       deleteBtn.innerHTML = 'Delete';
       deleteBtn.addEventListener('click', app.deleteNote);
 
-      editBtn.className = 'edit';
-      editBtn.innerHTML = 'Edit';
-      editBtn.addEventListener('click', app.editNote);
       
       app.notes.prepend(li);
 
@@ -62,17 +81,26 @@
 
       
     },
-    //edit function
-//Could not work out edit function
-    editNote: function() {
-      alert("Edit funtion doesnot work");
-     
-    },
+    
 
     
     //delete function
     deleteNote: function() {
       this.parentNode.remove();
+    },
+
+    
+    redNote: function() {
+      this.parentNode.className = 'red';
+    },
+
+    greenNote: function() {
+     this.parentNode.className = 'green';
+    },
+
+    
+    blueNote: function() {
+      this.parentNode.className = 'blue';
     },
 
       
